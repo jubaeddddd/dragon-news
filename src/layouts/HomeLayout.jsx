@@ -1,12 +1,16 @@
 
 import { Outlet } from 'react-router-dom';
 import Header from '../components/Header';
+import NewsMarquee from '../components/NewsMarquee';
+import Navbar from '../components/Navbar';
 
 const HomeLayout = () => {
     return (
         <div>
             <header>
-                  <Header></Header>
+                <Header></Header>
+                <NewsMarquee></NewsMarquee>
+                <Navbar></Navbar>
             </header>
             <section>
                 <div className='leftSide'></div>
