@@ -1,24 +1,22 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import user from "../assets/user.png"
+import person from '../assets/user.png'
 
-const Navbar = () => {
+const NavBar = () => {
     return (
-        <div className='mx-auto w-11/12 flex justify-between items-center'>
-            <div>
-
-            </div>
-            <div className='flex gap-3'>
+        <div className='flex items-center justify-between mt-3.5'>
+            <div></div>
+            <div className='nav flex gap-4'>
                 <NavLink to='/'>Home</NavLink>
                 <NavLink to='/about'>About</NavLink>
                 <NavLink to='/career'>Career</NavLink>
             </div>
-            <div className='flex gap-2'>
-                <img src={user} alt="" />
-                <button className='btn bg-[#403F3F] text-white'>Login</button>
+            <div className='login-btn flex gap-1.5'>
+                <img src={person} alt="" />
+                <button className="btn btn-primary px-5 text-white">Login</button>
             </div>
         </div>
     );
 };
 
-export default Navbar;
+export default NavBar;
