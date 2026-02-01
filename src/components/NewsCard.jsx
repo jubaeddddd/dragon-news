@@ -1,7 +1,9 @@
 import { FaStar, FaEye, FaBookmark, FaShareAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const NewsCard = ({ newws }) => {
   const {
+    id,
     title,
     author,
     thumbnail_url,
@@ -51,9 +53,9 @@ const NewsCard = ({ newws }) => {
           {details.length > 200 ? details.slice(0, 200) + "..." : details}
         </p>
 
-        <button className="btn btn-link p-0 mt-2 text-primary">
+        <Link to={`/news-details/${id}`} className="btn btn-link p-0 mt-2 text-primary">
           Read More
-        </button>
+        </Link>
       </div>
 
       {/* Footer */}

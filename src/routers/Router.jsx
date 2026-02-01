@@ -5,6 +5,11 @@ import {
 import HomeLayout from "../layouts/HomeLayout";
 import Home from "../Pages/Home";
 import CategoryNews from "../pages/CategoryNews";
+import AuthLayout from "../Layouts/AuthLayout";
+import SignIn from "../Components/AuthLayout/SignIn";
+import Register from "../Components/AuthLayout/Register";
+import NewsDetails from "../pages/NewsDetails";
+import PrivateRoute from "../Provider/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -24,11 +29,22 @@ const router = createBrowserRouter([
   },
   {
     path: "/auth",
-    element: <h1>Authentication Layout</h1>,
+    element:<AuthLayout></AuthLayout>,
+    children:[
+      {
+        path:'/auth/signIn',
+        element:<SignIn></SignIn>
+      },
+      {
+        path:'/auth/register',
+        element:<Register></Register>
+      }
+    ]
   },
   {
-    path: "/news",
-    element: <h1>News Layout</h1>,
+    path: "/news-details/:newsId",
+    element: <PrivateRoute><NewsDetails></NewsDetails></PrivateRoute>,
+    loader:()=>fetch('/public/news.json')
   },
   {
     path: "/*",
